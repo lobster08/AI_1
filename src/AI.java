@@ -24,13 +24,13 @@ public class AI {
 	public void compare(String input) {
 		boolean found = false;
 				
-		for(int x=0; x < 3; x++) {					// PROBLEM HERE!!!!!!!!!
-			if(welcome[x] == input) {
+		for(int x=0; x < 3 || !found; x++) {					// PROBLEM HERE!!!!!!!!!
+			if(input.equals(welcome[x]) {					// Try to use different comparison 
 				found = true;
 				welcome();
 				break;
 			}
-			else if(exit[x] == input) {
+			else if(input.equals(exit[x]) {
 				found = true;
 				exit();
 				break;
