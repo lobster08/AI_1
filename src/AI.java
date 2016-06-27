@@ -6,28 +6,41 @@ import java.util.Scanner;
 public class AI {
 
 	private String[] welcome = {"hi", "hello", "hey"};
-	private String[] exit = {"exit", "terminate", "shutdown"};
+	private String[] exit = {"shutdown", "exit", "terminate"};
+	
+	
+	AI() {
+	/*	welcome[0] = "hi";
+		welcome[1] = "hello";
+		welcome[2] = "hey";
+		
+		exit[0] = "exit";
+		exit[1] = "shutdown";
+		exit[2] = "terminate";
+			
+		*/
+	}
 	
 	public void compare(String input) {
 		boolean found = false;
-		
-		for(int x=0; x < 3 || !found; x++) {
+				
+		for(int x=0; x < 3; x++) {					// PROBLEM HERE!!!!!!!!!
 			if(welcome[x] == input) {
 				found = true;
 				welcome();
+				break;
 			}
-			else if(input == exit[x]) {
+			else if(exit[x] == input) {
 				found = true;
 				exit();
+				break;
 			}
 		}
 		
 		if(found == false) {
 		System.out.println("I'm sorry but I haven't learn how to respond to that.");
 		}
-		
-		return;
-		
+				
 	}	
 	
 	public void welcome() {
@@ -45,10 +58,13 @@ public class AI {
 		
 		AI bot = new AI();
 		
-		System.out.println("_");
+		System.out.print("_");
 		String userInput = input.next().toLowerCase();
 		
 		bot.compare(userInput);
+		
+				
+		System.out.println(userInput);
 		
 		input.close();
 		
